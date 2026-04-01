@@ -1,5 +1,7 @@
 # android-hello-world
 
+[![Build](https://github.com/xiongxianfei/android-hello-world/actions/workflows/build.yml/badge.svg)](https://github.com/xiongxianfei/android-hello-world/actions/workflows/build.yml)
+
 A minimal Android Hello World app built with Kotlin and XML layouts. Displays "Hello World!" centered on screen.
 
 ## Overview

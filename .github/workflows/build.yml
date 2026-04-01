@@ -43,6 +43,9 @@ jobs:
       - name: Build via Docker Compose
         run: docker compose up --build
 
+      - name: Fix file permissions
+        run: sudo chown -R $USER:$USER app/build/
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

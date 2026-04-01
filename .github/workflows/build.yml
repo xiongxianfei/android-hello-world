@@ -43,11 +43,11 @@ jobs:
       - name: Build via Docker Compose
         run: docker compose up --build
 
-      - name: Fix file permissions
-        run: sudo chown -R $USER:$USER app/build/
+      - name: Extract APK from container
+        run: docker compose cp android-build:/app/app/build/outputs/apk/debug/app-debug.apk ./app-debug.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-docker
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: app-debug.apk

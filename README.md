@@ -4,14 +4,33 @@ A minimal Android Hello World app built with Kotlin and XML layouts.
 
 ## Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) — to build the APK
 - Android device or emulator with API 24+ — to run the app
 - [ADB](https://developer.android.com/tools/adb) — to install the APK on a device
 
 ## Build
 
+### Option 1 — Docker (no local SDK required)
+
+Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
 ```bash
 docker compose up --build
+```
+
+Subsequent builds skip the image rebuild and run in ~20s.
+
+### Option 2 — Local
+
+Requires [JDK 17](https://adoptium.net/) and [Android Studio](https://developer.android.com/studio) (or the Android SDK command-line tools) with `ANDROID_HOME` set.
+
+**macOS / Linux:**
+```bash
+./gradlew assembleDebug
+```
+
+**Windows:**
+```bat
+gradlew.bat assembleDebug
 ```
 
 The APK is output to:
@@ -19,8 +38,6 @@ The APK is output to:
 ```
 app/build/outputs/apk/debug/app-debug.apk
 ```
-
-Subsequent builds (no code changes) skip the Docker image rebuild and run in ~20s.
 
 ## Install
 

@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-local:
+    name: Local (Gradle)
     runs-on: ubuntu-latest
 
     steps:
@@ -29,5 +30,21 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug
+          name: app-debug-local
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+  build-docker:
+    name: Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build via Docker Compose
+        run: docker compose up --build
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-docker
           path: app/build/outputs/apk/debug/app-debug.apk

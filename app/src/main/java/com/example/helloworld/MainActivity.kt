@@ -1,5 +1,6 @@
 package com.example.helloworld
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val textHello = findViewById<TextView>(R.id.textHello)
         val btnTap = findViewById<Button>(R.id.btnTap)
+        val btnDetails = findViewById<Button>(R.id.btnDetails)
 
         btnTap.setOnClickListener {
             textHello.text = if (textHello.text == getString(R.string.hello_world)) {
@@ -19,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 getString(R.string.hello_world)
             }
+        }
+
+        btnDetails.setOnClickListener {
+            startActivity(Intent(this, DetailActivity::class.java))
         }
     }
 }

@@ -3,4 +3,7 @@
     <string name="hello_world">Hello World!</string>
     <string name="hello_android">Hello Android!</string>
     <string name="btn_tap">Tap me</string>
+    <string name="btn_details">Learn more</string>
+    <string name="detail_message">This is a Hello World app built with Kotlin and XML layouts.</string>
+    <string name="detail_title">Details</string>
 </resources>

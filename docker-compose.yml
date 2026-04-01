@@ -1,0 +1,12 @@
+services:
+  android-build:
+    build: .
+    volumes:
+      - .:/app
+    command: >
+      sh -c "
+        if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
+          gradle wrapper --gradle-version 8.7;
+        fi &&
+        ./gradlew assembleDebug --no-daemon
+      "

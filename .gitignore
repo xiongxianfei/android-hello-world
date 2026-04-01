@@ -1,0 +1,31 @@
+# Android
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Gradle
+gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Generated files
+app/build/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google services
+google-services.json
+
+# Docker
+.dockerignore

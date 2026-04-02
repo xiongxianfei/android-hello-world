@@ -2,28 +2,27 @@ package com.example.helloworld
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.helloworld.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val textHello = findViewById<TextView>(R.id.textHello)
-        val btnTap = findViewById<Button>(R.id.btnTap)
-        val btnDetails = findViewById<Button>(R.id.btnDetails)
-
-        btnTap.setOnClickListener {
-            textHello.text = if (textHello.text == getString(R.string.hello_world)) {
+        binding.btnTap.setOnClickListener {
+            binding.textHello.text = if (binding.textHello.text == getString(R.string.hello_world)) {
                 getString(R.string.hello_android)
             } else {
                 getString(R.string.hello_world)
             }
         }
 
-        btnDetails.setOnClickListener {
+        binding.btnDetails.setOnClickListener {
             startActivity(Intent(this, DetailActivity::class.java))
         }
     }

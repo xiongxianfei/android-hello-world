@@ -1,16 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.example.helloworld"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.helloworld"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 2
         versionName = "1.1.0"
     }
@@ -33,12 +32,6 @@ android {
 
     buildFeatures {
         viewBinding = true
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
     }
 }
 

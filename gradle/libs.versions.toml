@@ -9,7 +9,7 @@ lifecycleViewModel = "2.8.3"
 activityKtx = "1.9.1"
 junit = "4.13.2"
 junitExt = "1.2.1"
-espressoCore = "3.6.1"
+espressoCore = "3.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

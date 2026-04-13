@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew assembleRelease --no-daemon
 
       - name: Upload release APK to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: app/build/outputs/apk/release/app-release-unsigned.apk
           generate_release_notes: true
